@@ -1,0 +1,68 @@
+/* Style for cat details cards */
+.cat-details,
+.cat2-details,
+.cat3-details,
+.cat4-details {
+    border: 5px solid #ddd;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.2); /* Added box-shadow for shadow effect */
+    margin: 20px auto; /* Adjust margin to create equal spacing and center horizontally */
+    max-width: 400px;
+    height: 80%; /* Set height to 100% */
+}
+
+/* Style for cat images */
+.cat-image,
+.cat-image2,
+.cat-image3,
+.cat-image4 {
+    width: 100%;
+    max-height: 120px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for buttons */
+.btn {
+    margin-top: 15px;
+}
+
+/* Common style for buttons */
+.btn-common {
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Style for Success Button (ยืนยันการกดจอง) */
+.btn-success {
+    background-color: #198754;
+}
+
+/* Style for Danger Button (ยกเลิกการจอง) */
+.btn-danger {
+    background-color: #dc3545;
+}
+
+/* Style for Secondary Buttons (รายระเอียด) */
+.btn-secondary {
+    background-color: #7a7a7a;
+}
+
+/* Custom style for rows and columns */
+.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.col {
+    flex: 1;
+}

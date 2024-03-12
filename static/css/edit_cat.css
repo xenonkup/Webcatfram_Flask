@@ -1,0 +1,8 @@
+.btn {
+    margin-bottom: 20px; /* ปรับระยะห่างของปุ่มจาก Footer */
+  }
+#catDetails {
+    height: auto;
+    min-height: 150px; /* หรือค่าที่ต้องการ */
+    resize: vertical; /* ช่องข้อความจะขยายแนวดิ่งเท่านั้น */
+}

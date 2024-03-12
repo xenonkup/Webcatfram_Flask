@@ -1,0 +1,8 @@
+/* home.css */
+.carousel-item img {
+    width: 100%;
+    height: calc(90vh - 56px - 56px); /* Subtracting the height of navbar and footer */
+    object-fit: cover;
+  }
+  
+  

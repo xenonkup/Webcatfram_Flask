@@ -1,0 +1,74 @@
+<!-- lookcat_empty_table.html -->
+{% extends "layout.html" %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลแมวทั้งหมด</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lookcat_empty_tableguest.css') }}">
+</head>
+<body>
+<div class="container text-center">
+    <header class="header my-4">
+        <h5>ข้อมูลแมวทั้งหมด</h5>
+    </header>
+    
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Cat Name</th>
+            <th scope="col">Breed</th>
+            <th scope="col">Age</th>
+            <th scope="col">Color</th>
+            <th scope="col">Status</th>
+            <th scope="col">Date</th>
+            <!-- ซ่อนคอลัมน์ Action -->
+            {% if 'logged_in' in session and session['logged_in'] %}
+            <th scope="col" colspan="3" width="15%">Action</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody id="catTableBody">
+    {% for cat in cats %}
+    <tr>
+        <td>{{ cat.cat_index }}</td>
+        <td>{{ cat.cat_name }}</td>
+        <td>{{ cat.cat_breed }}</td>
+        <td>{{ cat.cat_age }} Year</td>
+        <td>{{ cat.cat_color }}</td>
+        <td>{{ cat.cat_status }}</td>
+        <td>{{ cat.cat_date }}</td>
+        <!-- ไม่แสดงปุ่มลบแถวถ้าเป็นแขก -->
+        {% if 'logged_in' in session and session['logged_in'] %}
+        <td>
+            <form action="/delete_catcell/{{ cat.cat_index }}" method="post">
+            <input type="submit" class="btn btn-danger" value="ลบแถว" />
+            </form>
+        </td>
+        <td>
+            <a href="{{ url_for('edit_cat_tables', cat_index=cat['cat_index']) }}" class="btn btn-primary">แก้ไข</a>
+        </td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</tbody>
+    </table>
+
+    <!-- สร้างปุ่มเพิ่มแมว แสดงเฉพาะสำหรับผู้ที่เข้าสู่ระบบเท่านั้น -->
+    {% if 'logged_in' in session and session['logged_in'] %}
+    <a href="{{ url_for('add_cat_table') }}">
+        <button type="button" class="btn btn-success">เพิ่มตารางแมว</button>
+    </a>
+    {% endif %}
+
+    <!-- สร้างปุ่มกดเพิ่มข้อมูลติดต่อกลับ -->
+    <a href="{{ url_for('contact_information') }}">
+        <button type="button" class="btn btn-primary ">เพิ่มข้อมูลติดต่อกลับ</button>
+    </a>
+</div>
+</body>
+</html>
+{% endblock %}

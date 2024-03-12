@@ -1,0 +1,19 @@
+/* ตำแหน่งปุ่มลบให้มีตำแหน่งอยู่ข้างบนขวาของการ์ด */
+.delete-button-container {
+  position: relative;
+}
+
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* Custom CSS */
+.carousel-inner{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

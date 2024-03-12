@@ -1,0 +1,51 @@
+{% extends "layout.html" %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Cat</title>
+</head>
+<body>
+<div class="container">
+    <h1>Edit Cat:</h1>
+    <form action="{{ url_for('edit_cat_tables', cat_index=cat['cat_index']) }}" method="post">
+        <div class="mb-3">
+            <label for="cat_name" class="form-label">Cat Name</label>
+            <input type="text" class="form-control" id="cat_name" name="cat_name" value="{{ cat['cat_name'] }}">
+        </div>
+        <div class="mb-3">
+            <label for="breed" class="form-label">New Breed</label>
+            <input type="text" class="form-control" id="breed" name="breed" value="{{ cat['cat_breed'] }}">
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">New Age</label>
+            <input type="number" class="form-control" id="age" name="age" value="{{ cat['cat_age'] }}"> 
+        </div>
+        <div class="mb-3">
+            <label for="color" class="form-label">New Color</label>
+            <input type="text" class="form-control" id="color" name="color" value="{{ cat['cat_color'] }}">
+        </div>
+        <div class="mb-3">
+            <label for="status" class="form-label">New Status:</label>
+            <!-- Checkboxes with status options -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Ready" id="readyCheckbox" name="status" {% if cat['cat_status'] == 'Ready' %} checked {% endif %}>
+                <label class="form-check-label" for="readyCheckbox">Ready</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Not Ready" id="notReadyCheckbox" name="status" {% if cat['cat_status'] == 'Not Ready' %} checked {% endif %}>
+                <label class="form-check-label" for="notReadyCheckbox">Not Ready</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">New Date</label>
+            <input type="date" class="form-control" id="date" name="date" value="{{ cat['cat_date'] }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+</div>
+</body>
+</html>
+{% endblock %}

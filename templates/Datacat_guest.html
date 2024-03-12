@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Datacat.css') }}" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for cat in cats %}
+        <div class="col">
+            <div class="card h-350">
+                <img src="{{ cat.image }}" class="card-img-top" alt="Cat Image">
+                <div class="card-body">
+                    <h5 class="card-title">Cat Name: {{ cat['name'] }}</h5>
+                    <p class="card-text">Breed: {{ cat['breed'] }}</p>
+                    <p class="card-text">Age: {{ cat['age'] }}</p>
+                    <p class="card-text">Color: {{ cat['color'] }}</p>
+                    <p class="card-text">Status: {{ cat['status'] }}</p>
+                    <p class="card-text">Date: {{ cat['date'] }}</p>
+                    {% if cat.vaccination_image %}
+                    <img src="{{ cat.vaccination_image }}" class="card-img-top" alt="Vaccination Image">
+                    {% endif %}
+                    <button class="btn btn-primary w-100 my-2" type="button" data-bs-toggle="modal" data-bs-target="#catDetailsModal{{ loop.index }}">รายระเอียด</button>
+                    <div class="d-flex justify-content-between">
+                        {% if 'logged_in' in session and session['logged_in'] %}
+                            <a href="{{ url_for('delete_card', cat_name=cat['name']) }}" class="btn btn-danger">ลบ</a>
+                            <a href="{{ url_for('edit_cat', cat_name=cat['name']) }}" class="btn btn-secondary">แก้ไข</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Modal for Cat Details -->
+{% for cat in cats %}
+<div class="modal fade" id="catDetailsModal{{ loop.index }}" tabindex="-1" aria-labelledby="catDetailsModal{{ loop.index }}Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="catDetailsModal{{ loop.index }}Label">รายละเอียดแมว</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- แสดงข้อมูลแมว -->
+                <p class="card-text">Detail: {{ cat['detail'] }}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">ปิด</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<!-- Add Cat Button -->
+<div class="container my-3">
+    <div class="row">
+        <div class="col d-flex justify-content-between">
+            <a href="{{ url_for('lookcat_empty_table') }}">
+                <button type="button" class="btn btn-secondary ">ดูตารางแมว</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

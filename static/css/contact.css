@@ -1,0 +1,57 @@
+
+main {
+    width: 50rem;
+    margin: 0 auto;
+    border-radius: 2rem;
+    padding: 2rem;
+   }
+
+.container-content {
+    background-color: #ffffff; /* สีพื้นหลังของเนื้อหา */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เงาที่เยอะขึ้น */
+    padding: 30px; /* ระยะห่างของเนื้อหาจากขอบ container */
+    border-radius: 10px; /* มุมของ container */
+}
+
+.logo-container {
+    text-align: center;
+    margin-top: 20px; /* ปรับการขยับโลโก้ลงมา */
+}
+
+.logo-container p {
+    margin: 0; /* กำหนด margin เป็น 0 เพื่อลบระยะห่างของประโยค */
+}
+
+.logof {
+    max-width: 45%; /* ขนาดสูงสุดของรูปภาพ logo */
+    height: auto; /* ทำให้รูปภาพเป็น responsive */
+    margin: 1px; /* ระยะห่างระหว่าง logo */
+}
+
+.logoa {
+    max-width: 23%; /* ขนาดสูงสุดของรูปภาพ logo */
+    height: auto; /* ทำให้รูปภาพเป็น responsive */
+    margin: 2px; /* ระยะห่างระหว่าง logo */
+}
+
+.logot {
+    max-width: 20%; /* ขนาดสูงสุดของรูปภาพ logo */
+    height: auto; /* ทำให้รูปภาพเป็น responsive */
+    margin: 4px; /* ระยะห่างระหว่าง logo */
+}
+
+.logom {
+    max-width: 45%; /* ขนาดสูงสุดของรูปภาพ logo */
+    height: auto; /* ทำให้รูปภาพเป็น responsive */
+    margin: -13px; /* ระยะห่างระหว่าง logo */
+}
+
+
+
+
+
+
+   
+   
+
+   

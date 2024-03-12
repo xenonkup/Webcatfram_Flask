@@ -1,0 +1,58 @@
+{% extends "layout.html" %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_cat.css') }}">
+</head>
+<body>
+<div class="container">
+  <h1>Add New Cat</h1>
+  <form action="/add_new_cat" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="catName" class="form-label">Cat Name</label>
+      <input type="text" class="form-control" name="name" id="catName" value="{{ cat.name }}"  />
+    </div>
+    <div class="mb-3">
+      <label for="breed" class="form-label">Breed</label>
+      <input type="text" class="form-control" name="breed" id="breed" value="{{ cat.breed }}"  />
+    </div>
+    <div class="mb-3">
+      <label for="age" class="form-label">Age</label>
+      <input type="number" class="form-control" name="age" id="age" value="{{ cat.age }}"  />
+    </div>
+    <div class="mb-3">
+      <label for="color" class="form-label">Color</label>
+      <input type="text" class="form-control" name="color" id="color" value="{{ cat.color }}"  />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Status</label>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="readyCheckbox" name="status" value="Ready" {% if cat.status == 'Ready' %} checked {% endif %}>
+        <label class="custom-control-label" for="readyCheckbox">Ready</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="notReadyCheckbox" name="status" value="Not Ready" {% if cat.status == 'Not Ready' %} checked {% endif %}>
+        <label class="custom-control-label" for="notReadyCheckbox">Not Ready</label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="catImage" class="form-label">Cat Image</label>
+      <input type="file" class="form-control" name="image" id="catImage" accept="image/*"  />
+    </div>
+    <div class="mb-3">
+      <label for="date" class="form-label">Date</label>
+      <input type="date" class="form-control" name="date" id="date" value="{{ cat.date }}"  />
+    </div>
+    <div class="mb-3">
+      <label for="catDetails" class="form-label">Cat Details</label>
+      <textarea class="form-control" name="detail" id="catDetails" rows="3" >{{ cat.detail }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</body>
+</html>
+{% endblock %}

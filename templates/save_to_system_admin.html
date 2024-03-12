@@ -1,0 +1,56 @@
+{% extends "layout.html" %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บันทึกข้อมูลติดต่อ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/save_to_system_admin.css') }}">
+</head>
+<body>
+<div class="container">
+    <h5 class="text-center my-4">บันทึกข้อมูลติดต่อ</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">ชื่อ-นามสกุล</th>
+                <th scope="col">อายุ</th>
+                <th scope="col">เพศ</th>
+                <th scope="col">อีเมล</th>
+                <th scope="col">เบอร์โทรติดต่อ</th>
+                <th scope="col">Facebook</th>
+                {% if 'logged_in' in session and session['logged_in'] %}
+                <th scope="col" colspan="3" width="15%">Action</th>
+                {%endif%}
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in PeopleTable_entries %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ entry.name }}</td>
+                <td>{{ entry.age }}</td>
+                <td>{{ entry.sex }}</td>
+                <td>{{ entry.email }}</td>
+                <td>{{ entry.phonenumber }}</td>
+                <td>{{ entry.facebook }}</td>
+                <td>
+                {% if 'logged_in' in session and session['logged_in'] %}
+                    <form action="/delete_contact_entry/{{ loop.index - 1 }}" method="post">
+                        <button type="submit" class="btn btn-danger">ลบ</button>
+                    </form>
+                </td>
+                <td>    
+                    <a href="/edit_contact_entry/{{ loop.index - 1 }}" class="btn btn-primary">แก้ไข</a>
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+{% endblock %}

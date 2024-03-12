@@ -1,0 +1,14 @@
+.container-box {
+    width: 70vw; /* ให้กว้าง 70% ของ viewport width */
+    max-width: 400px; /* กำหนดความกว้างสูงสุด */
+    margin: 0 auto; /* ทำให้เข้ากับจอตรงกลาง */
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .medium-font-size {
+    font-size: 1.5em; /* ให้ขนาดตัวอักษรเท่ากับ 1.5 เท่าของขนาดปกติ */
+  }
+  

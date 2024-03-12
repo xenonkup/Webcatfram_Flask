@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Cat Farm{% endblock %}</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/layout.css') }}"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+          <ul class="navbar-nav">
+    <a class="navbar-brand" href="#">
+        <img src="{{ url_for('static', filename='images/layout/Logocathome.png') }}" class="card-img-top" alt="..."> 
+    </a>
+    <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="/">หน้าแรก</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Datacat">ข้อมูลแมว</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/lookcat_empty_table">ตารางแมว</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Contact">ติดต่อสอบถาม</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/save_to_system_admin">ตารางข้อมูลติดต่อ</a>
+    </li>
+    {% if 'logged_in' in session and session['logged_in'] %}
+  <!-- ตรวจสอบว่าผู้ใช้เข้าสู่ระบบและมีสิทธิ์ Admin -->
+  {% if session['username'] == 'admin' %}
+    <!-- แสดงปุ่ม Admin เมนู -->
+    <li class="nav-item">
+      <a class="nav-link" href="/admin_panel">Admin Panel</a>
+    </li>
+    <!-- แสดงปุ่ม Save to System Admin -->
+    <li class="nav-item">
+      <a class="nav-link" href="/save_to_system_admin">Save to System Admin</a>
+    </li>
+  {% else %}
+    <!-- ถ้าไม่ใช่ Admin แสดงปุ่ม Logout เท่านั้น -->
+    <li class="nav-item">
+      <a class="nav-link" href="/logout">ออกจากระบบ</a>
+    </li>
+  {% endif %}
+{% else %}
+  <!-- ถ้าไม่ได้เข้าสู่ระบบ แสดงปุ่มเข้าสู่ระบบเท่านั้น -->
+  <li class="nav-item">
+    <a class="nav-link" href="/login"></a>
+  </li>
+{% endif %}
+
+
+    </ul>
+    </div>
+    </div>
+    </nav>
+    <main style="flex: 1">{% block content %} {% endblock %}</main>
+    <footer class="bottom-footer">
+      <div class="container text-center">
+        <p>&copy; 2024 Cat Farm. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+/* Style for table */
+.table {
+  margin-top: 20px;
+  width: 100%; /* กว้างเต็มหน้าจอ */
+  border-collapse: collapse; /* ปิดการแบ่งเส้นของตาราง */
+}
+
+.table thead th {
+  background-color: #343a40; /* Dark color */
+  color: #fff;
+  border-color: #343a40;
+  text-align: center; /* จัดข้อความในส่วนหัวตารางให้อยู่ตรงกลาง */
+}
+
+.table tbody td {
+  text-align: center; /* จัดข้อความในเซลล์ข้อมูลให้อยู่ตรงกลาง */
+}
+
+tr {
+  height: 50px; /* ปรับความสูงของแถวเป็น 50px */
+}
+
+.btn {
+  margin-right: 10px; /* ปรับระยะห่างที่คุณต้องการ */
+  width: 65px; /* กำหนดความกว้างของปุ่ม */
+  height: 35px; /* กำหนดความสูงของปุ่ม */
+}

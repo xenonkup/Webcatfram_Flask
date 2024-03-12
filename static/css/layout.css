@@ -1,0 +1,29 @@
+.navbar-brand img {
+    height: 100px; /* Adjust as needed */
+}
+
+.nav-item {
+    line-height: 100px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+main {
+    flex: 1;
+}
+
+.bottom-footer {
+    padding: 2%; /* Adjust the top and bottom padding as needed */
+    background-color: #343a40;
+    color: white;
+}
+
+.bottom-footer {
+  margin-top: auto;
+}
+
+

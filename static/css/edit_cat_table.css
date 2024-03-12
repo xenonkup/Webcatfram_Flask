@@ -1,0 +1,4 @@
+/* ปรับลักษณะการแสดงผลของปุ่ม Save Changes */
+.btn-save-changes {
+    margin-bottom: 20px; /* ปรับระยะห่างของปุ่มจาก footer */
+}

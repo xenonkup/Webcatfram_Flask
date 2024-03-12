@@ -1,0 +1,52 @@
+<!-- contact.html -->
+{% extends "layout.html" %} 
+
+{% block content %}
+<title>Contact Us</title>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+</head>
+
+<div class="container-content">
+  <form id="contact-form" method="POST" action="/send_email">
+    <div class="container">
+      <div class="input__container">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" class="form-control" value="{{ name }}" required>
+      </div>
+      <div class="input__container">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" value="{{ email }}" required>
+      </div>
+      <div class="input__container mb-4">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" class="form-control" required>{{ message }}</textarea>
+      </div>
+      <button type="submit" class="btn btn-success px-4" id="submitBtn">Send</button>
+    </div>
+  </form>
+
+  <div class="logo-container">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-3 text-center">
+          <img src="{{ url_for('static', filename='images/contact/logofacebook.png') }}" alt="Facebook Logo" class="logof">
+          <p>Facebook Page</p>
+          <p>xxxx-xxxx-xxxx</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <img src="{{ url_for('static', filename='images/contact/logohome.png') }}" alt="Home Logo" class="logoa">
+          <p>Address</p>
+          <p>xxxx-xxxx-xxxx</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <img src="{{ url_for('static', filename='images/contact/logotelephone.png') }}" alt="Telephone Logo" class="logot">
+          <p>Telephone number</p>
+          <p>xxxx-xxxx-xxxx</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

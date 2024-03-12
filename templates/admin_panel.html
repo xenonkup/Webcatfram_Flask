@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center p-5" style="background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <h1 class="display-4 medium-font-size">คุณต้องการออกจากระบบหรือไม่</h1>
+      <p class="lead" id="username-display">ชื่อผู้ใช้: {{ session['username'] }}</p>
+      <div class="my-4">
+        <button class="btn btn-success px-4" onclick="fetch('/logout', { method: 'GET' }).then(response => window.location.href = response.url)">ยืนยัน</button>
+        <a class="btn btn-secondary px-4" href="/">ยกเลิก</a>
+      </div>
+    </div>
+  </div>
+    <a href="/logout">Logout</a>
+</body>
+</html>
+{% endblock %}

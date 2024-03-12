@@ -1,0 +1,50 @@
+{% extends "layout.html" %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เพิ่มข้อมูลแมว</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_cat_table.css') }}">
+</head>
+<body>
+<div class="container">
+    <header class="header my-4">
+        <h5>เพิ่มข้อมูลแมว</h5>
+    </header>
+    <form action="/add_cat_table" method="post">
+    <div class="mb-3">
+        <label for="catName" class="form-label">ชื่อแมว</label>
+        <input type="text" class="form-control" id="catName" name="catName" value="{{ catName }}">
+    </div>
+    <div class="mb-3">
+        <label for="catBreed" class="form-label">สายพันธ์ุ</label>
+        <input type="text" class="form-control" id="catBreed" name="catBreed" value="{{ catBreed }}">
+    </div>
+    <div class="mb-3">
+        <label for="catAge" class="form-label">อายุ</label>
+        <input type="number" class="form-control" id="catAge" name="catAge" value="{{ catAge }}">
+    </div>
+    <div class="mb-3">
+        <label for="catColor" class="form-label">สีแมว</label>
+        <input type="text" class="form-control" id="catColor" name="catColor" value="{{ catColor }}">
+    </div>
+    <div class="mb-3">
+        <label for="catStatus" class="form-label">สถานนะ</label>
+        <select class="form-select" id="catStatus" name="catStatus">
+            <option value="{{ catStatus }}">{{ catStatus }}</option>
+            <option value="Ready">พร้อม</option>
+            <option value="Not Ready">ไม่ พร้อม</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="catDate" class="form-label">วันเกิดแมว</label>
+        <input type="date" class="form-control" id="catDate" name="catDate" value="{{ catDate }}">
+    </div>
+    <button type="submit" class="btn btn-primary">ยืนยัน</button>
+</form>
+</div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,36 @@
+/* Style for card images */
+.card-img-top {
+    height: 200px; /* Set the desired height */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card img {
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    color: #666;
+}
+
+.card-footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: right;
+    color: #999;
+}
