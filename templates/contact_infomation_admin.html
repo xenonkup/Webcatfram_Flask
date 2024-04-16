@@ -13,7 +13,7 @@
         <header class="header my-4">
             <h5>เพิ่มข้อมูลติดต่อกลับ</h5>
         </header>
-        <form method="POST" action="{{ url_for('contact_table') }}">
+        <form method="POST" action="{{ url_for('save_to_system_admin') }}">
             <div class="mb-3">
                 <label for="name" class="form-label">ชื่อ-นามสกุล</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ name }}">

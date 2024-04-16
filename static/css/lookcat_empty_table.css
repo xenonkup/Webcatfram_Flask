@@ -30,16 +30,6 @@
     font-weight: bold;
   }
 
-  .status-active {
-    color: #28a745;
-    background-color: rgba(40, 167, 69, 0.2);
-  }
-
-  .status-inactive {
-    color: #dc3545;
-    background-color: rgba(220, 53, 69, 0.2);
-  }
-
   .btn-edit,
     .btn-delete {
       margin-right: 5px; /* ปรับระยะห่างที่คุณต้องการ */
@@ -51,16 +41,6 @@
       width: auto;
       height: auto;
       border-radius: 0;
-    }
-
-    .status-cell.status-ready {
-      color: white;
-      background-color: #42bd41
-    }
-    
-    .status-cell.status-not-ready {
-      color: white;
-      background-color: #e84e40;
     }
 
     #phoneNumberForm {
