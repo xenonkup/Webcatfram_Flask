@@ -62,8 +62,19 @@ Before running this project, ensure you have the following installed:
 6. Configure MySQL database (see Database Setup).
 
 7.Run the Flask application:
-  ```bash
-  flask run
+ ```bash
+ flask run
+ Access the application in your browser at http://127.0.0.1:5000.
+
+
+
+
+
+
+
+
+
+
 
 
 
