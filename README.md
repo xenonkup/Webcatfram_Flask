@@ -64,19 +64,4 @@
   7.Run the Flask application:
    ```bash
    flask run
-   You can access the application in your browser at http://127.0.0.1:5000.
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    
-     
+   Access the application in your browser at http://127.0.0.1:5000.
