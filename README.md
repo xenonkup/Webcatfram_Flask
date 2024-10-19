@@ -1,4 +1,4 @@
-  ## Table of Contents
+## Table of Contents
   - [Introduction](#introduction)
   - [Technologies Used](#technologies-used)
   - [Features](#features)
@@ -6,13 +6,12 @@
   - [Usage](#usage)
   - [Database Setup](#database-setup)
   
-  
-    ## Introduction
+## Introduction
   **Breeding Cat Booking** is a web application designed for cat breeders to manage breeding schedules, bookings, and customer inquiries. This application simplifies the process 
     of tracking available cats for breeding, managing bookings, and ensuring a smooth interaction between breeders and customers. The application is built using Flask as the
     backend framework and utilizes MySQL for data storage.
-  
-  ## Technologies Used
+    
+## Technologies Used
   - **Backend:** Flask (Python)
   - **Frontend:** HTML5, CSS3
   - **Database:** MySQL
@@ -22,21 +21,21 @@
     - Flask-WTF (for form handling)
     - Bootstrap (for responsive design)
   
-  ## Features
+## Features
   - **User Authentication:** Secure login and registration for breeders and customers.
   - **Breeding Schedule Management:** Add, update, and delete breeding schedules for available cats.
   - **Booking System:** Customers can view available cats and make bookings.
   - **Customer Inquiries:** Manage and respond to customer inquiries regarding breeding services.
   
-  ## Installation
+## Installation
   
-  ### Prerequisites
+### Prerequisites
   Before running this project, ensure you have the following installed:
   - Python
   - MySQL
   - Flask and necessary Python libraries (can be installed via `requirements.txt`)
   
-  ### Steps
+### Steps
   
   1. Clone this repository:
      ```bash
